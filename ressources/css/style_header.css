@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 105%;
+}
+
+body {
+    background-color: rgba(255, 241, 164, 0.74);
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+}
+
+h1 {
+    color: chocolate;
+    font-family: 'Rammetto One', cursive;
+    text-align: center;
+}
+
+h3 {
+    color: rgb(230, 171, 91);
+    font-family: 'Rammetto One', cursive;
+    text-align: justify;
+}
+
+h4 {
+    color: burlywood;
+    font-family: 'Rammetto One', cursive;
+    text-indent: 20px;
+}
+
+h5 {
+    color: burlywood;
+    font-family: 'Rammetto One', cursive;
+    text-indent: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 2px;
+}
+
+header li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+}
+
+header img {
+    height: 200%;
+    width: auto;
+}
+
+#logo {
+    float: left;
+}
+
+header {
+    border: solid 4px #f74600;
+    height: 100px;
+    background-color: rgb(165, 101, 0);
+    width: 100%;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+}
+
+header nav>ul {
+    padding-top: 2%;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: auto;
+}
+
+header nav ul li .menu-principal:hover a {
+    color: #4C2A29;
+}
+
+header li img {
+    width: 40px;
+    float: right;
+    padding: 5px;
+}
+
+header #mainNav input {
+    background-color: #FFFFFF;
+    border-color: white;
+    border-radius: 45px;
+    width: 200px;
+    box-shadow: none;
+    color: none;
+    border-width: 0;
+    padding: 5px;
+    color: #EBAD5D;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+header input::placeholder {
+    color: #EBAD5D;
+}
+
+header #mainNav {
+    float: right;
+    margin-right: 5%;
+}
+
+header li:hover a {
+    color: #4C2A29;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+main #title {
+    margin: 2% 0;
+    text-align: center;
+    color: #4C2A29;
+    font-family: Rammetto One, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35pt;
+}
+
+main #body {
+    margin-bottom: 5%;
+}
+
+main a img {
+    height: 10%;
+    position: absolute;
+    margin-left: 67%;
+    margin-top: -1%;
+}
+
+.footerMenu {
+    margin-bottom: 10px;
+    background-color: rgb(165, 101, 0);
+    padding: 20px 15% 20px 20px;
+    text-align: right;
+    border: solid 4px #f74600;
+}
+
+.footerMenu li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 5px;
+    font-size: 16pt;
+}
+
+.footerMenu a {
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.footerMenu a:hover {
+    color: #4C2A29;
+}
+
+.copyright {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*Menu responsive*/
+
+.nav {
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+.hamb {
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+.hamb-line {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu:checked~nav {
+    max-height: 100%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Responsiveness */
+@media (min-width: 1225px) {
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+    }
+
+    .hamb {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1225px) {
+
+    header li {
+        display: grid;
+    }
+
+    #mainNav {
+        position: absolute;
+        margin-right: auto !important;
+        margin-top: 102px;
+        z-index: 1000;
+        background-color: rgb(165, 101, 0);
+        border: solid 4px #f74600;
+        border-top: none;
+        height: auto;
+        margin-left: 65%;
+    }
+}
